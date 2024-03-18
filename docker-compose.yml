@@ -1,0 +1,48 @@
+version: "3"
+
+networks:
+  laravel:
+
+services:
+  nginx:
+    container_name: nginx
+    platform: linux/amd64
+    image: nginx:alpine3.18
+    ports:
+      - "80:80"
+    volumes:
+      - ./php/laravel:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mariadb
+    networks:
+      - laravel
+
+  mariadb:
+    container_name: mariadb
+    platform: linux/amd64
+    image: mariadb:11.3.2
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+      - ./mariadb/data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: portpolio
+      MYSQL_USER: unani
+      MYSQL_PASSWORD: RkRnd4591!
+      MYSQL_ROOT_PASSWORD: RkRnd4591!
+    networks:
+      - laravel
+
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    volumes:
+      - ./php/laravel:/var/www/html
+    networks:
+      - laravel

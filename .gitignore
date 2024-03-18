@@ -1,0 +1,34 @@
+
+/.fleet
+/.idea
+/.vscode
+
+# mariadb data
+/mariadb/data
+
+/php/laravel/vendor/
+
+# Laravel 4 specific
+/php/laravel/bootstrap/compiled.php
+/php/laravelapp/storage/
+
+# Laravel 5 & Lumen specific
+/php/laravel/public/storage
+/php/laravel/public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+/php/laravel/public_html/storage
+/php/laravel/public_html/hot
+
+/php/laravel/storage/*.key
+/php/laravel/Homestead.yaml
+/php/laravel/Homestead.json
+/php/laravel/.vagrant
+/php/laravel/.phpunit.result.cache
+
+/php/laravel/.env
+/php/laravel/.env.backup
+/php/laravel/.env.production
+/php/laravel/.env.example
+
+/php/laravel/.editorconfig
