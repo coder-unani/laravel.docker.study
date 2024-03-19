@@ -32,8 +32,8 @@ services:
     environment:
       MYSQL_DATABASE: mariadb
       MYSQL_USER: unani
-      MYSQL_PASSWORD: RkRnd4591!
-      MYSQL_ROOT_PASSWORD: RkRnd4591!
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
     networks:
       - laravel
 
