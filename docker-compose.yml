@@ -30,7 +30,7 @@ services:
       - ./mariadb/conf.d:/etc/mysql/conf.d
       - ./mariadb/data:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: portpolio
+      MYSQL_DATABASE: mariadb
       MYSQL_USER: unani
       MYSQL_PASSWORD: RkRnd4591!
       MYSQL_ROOT_PASSWORD: RkRnd4591!

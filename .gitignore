@@ -32,3 +32,5 @@
 /php/laravel/.env.example
 
 /php/laravel/.editorconfig
+
+.DS_Store
